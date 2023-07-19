@@ -62,9 +62,12 @@ export default function BlogList({ posts }: Props) {
             {/* <p className="">{post.title}</p> */}
             {/* <p className="">{post.body[0].code}</p> */}
             <div className="flex flex-col gap-y-2 md:flex-row md:gap-x-2">
-              {post.categories.map((category) => {
+              {post.categories.map((category, i) => {
                 return (
-                  <div className="bg-[--color-grey-light-2] text-center text-black px-3 py-1 rounded-sm text-sm">
+                  <div
+                    key={i}
+                    className="bg-[--color-grey-light-2] text-center text-black px-3 py-1 rounded-sm text-sm"
+                  >
                     <p>{category.title}</p>
                   </div>
                 );
